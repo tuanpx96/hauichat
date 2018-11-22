@@ -2,37 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1c79903-9082-4a67-9209-85c491b84759" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../apps/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/celery.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/dev.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings/prod.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../requirement.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../uwsgi_params" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/haui.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/haui/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/haui/celery.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/haui/settings/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/haui/settings/base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/haui/settings/dev.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/haui/settings/prod.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/haui/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/haui/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirement.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uwsgi_params" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

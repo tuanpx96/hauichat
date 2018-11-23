@@ -14,6 +14,7 @@ from apps.core.https import HttpHauichatResponseRedirect, SIXCENTS_PROTOCOL
 from apps.users import models as user_models
 from apps.users import serializers as user_sers
 from apps.users import utils as user_utils
+
 from apps.users.tasks import (
     send_forgot_password_email, send_register_confirm_email,
 )
@@ -38,7 +39,6 @@ class LoginEmailAPI(APIView):
             return Response('Incorrect email or password', status=status.HTTP_401_UNAUTHORIZED)
 
         token = user_models.Token.objects.create(user=user)
-        user.user_type = user_utils.get_user_type(user.id)
         data = {
             'access_token': token.key,
             'expired_time': user_utils.get_expired_time(token),
@@ -113,40 +113,6 @@ class LoginFacebookAPI(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-class LoginLineAPI(APIView):
-    permission_classes = (permissions.AllowAny,)
-
-    def post(self, request, format=None):
-        validator = user_sers.LoginLineValidator(data=request.data)
-        if not validator.is_valid():
-            return Response(validator.errors, status=status.HTTP_400_BAD_REQUEST)
-
-        line_access_token = validator.validated_data['line_access_token']
-        try:
-            profiles = user_utils.get_line_profile(line_access_token)
-            line_id = profiles['userId']
-            user_name = profiles['displayName']
-        except Exception:
-            return Response('Incorrect Line Id', status=status.HTTP_401_UNAUTHORIZED)
-
-        user, created = user_models.User.objects.get_or_create(
-            line_id=line_id,
-            defaults={'username': user_name}
-        )
-
-        token = user_models.Token.objects.create(user=user)
-        user.user_type = user_utils.get_user_type(user.id)
-        data = {
-            'access_token': token.key,
-            'expired_time': user_utils.get_expired_time(token),
-            'user': user
-        }
-
-        user_utils.create_or_update_login_history(user.id)
-        serializer = user_sers.TokenSerializer(data)
-        return Response(serializer.data, status=status.HTTP_200_OK)
-
-
 class RegisterEmailAPI(APIView):
     permission_classes = (permissions.AllowAny,)
 
@@ -160,11 +126,11 @@ class RegisterEmailAPI(APIView):
         if user_models.User.objects.filter(email=email).exists():
             return Response('Email already exists', status=status.HTTP_409_CONFLICT)
         else:
-            user = user_models.User(email=email, is_active=False)
+            user = user_models.User(email=email, is_active=True)
             user.set_password(password)
             user.save()
 
-        send_register_confirm_email.delay(email)
+        # send_register_confirm_email.delay(email)
 
         serializer = user_sers.UserSerializer(user)
         return Response(serializer.data, status=status.HTTP_200_OK)

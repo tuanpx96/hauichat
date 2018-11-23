@@ -22,7 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/email/', user_views.LoginEmailAPI.as_view()),
     path('reset-password/', user_views.ResetPassword.as_view()),
-    path('login/line/', user_views.LoginLineAPI.as_view()),
     path('login/facebook/', user_views.LoginFacebookAPI.as_view()),
     path('register/', user_views.RegisterEmailAPI.as_view()),
     path('confirm/<token>/', user_views.ConfirmEmailAPI.as_view()),

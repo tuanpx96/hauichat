@@ -29,7 +29,7 @@ def generate_forgot_link(email):
 @shared_task
 def send_register_confirm_email(to_email):
     confirm_link = generate_confirm_link(to_email)
-    subject = '[Sixcent English App] Register Confirmation'
+    subject = '[Haui Chat App] Register Confirmation'
     context = {'confirm_link': confirm_link}
     body_html = render_to_string('emails/register_confirm.html', context)
     send_email.delay(

@@ -61,7 +61,7 @@ AUTH_USER_MODEL = 'users.User'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -163,6 +163,17 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 }
 
+FCM_DJANGO_SETTINGS = {
+    # 'FCM_SERVER_KEY': 'AAAAd5xjO68:APA91bFhI-Hd-7tvNtoyHtGWTYqLFyvZCfM7tCRmSUjZ-K4tL4LLWfXr0SFPbcMZZxTmTmP-qKmgKwciCdXEIOIOMbfG8Wb8x5nlPiqxPsg3sL8Cnsm6V5vWXw6eqtywtDlf0rab2cvX',
+    # true if you want to have only one active device per registered user at a time
+    # default: False
+    'ONE_DEVICE_PER_USER': True,
+    # devices to which notifications cannot be sent,
+    # are deleted upon receiving error response from FCM
+    # default: False
+    'DELETE_INACTIVE_DEVICES': True,
+}
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -182,3 +193,4 @@ URL_GET_ID_FACEBOOK = "https://graph.facebook.com/me?access_token="
 
 DEFAULT_PAGE = 1
 DEFAULT_PAGE_SIZE = 10
+EXPIRED_TOKEN_TIME = 86400

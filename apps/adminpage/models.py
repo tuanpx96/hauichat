@@ -1,0 +1,41 @@
+from django.db import models
+
+ACTION_ADD = 'ADD'
+ACTION_UPDATE = 'UPDATE'
+ACTION_DELETE = 'DELETE'
+
+ACTION_CHOICES = (
+    (ACTION_ADD, 'ADD'),
+    (ACTION_UPDATE, 'UPDATE'),
+    (ACTION_DELETE, 'DELETE'),
+)
+
+REF_WORD = 'WORD'
+REF_PHRASE = 'PHRASE'
+REF_SENTENCE = 'SENTENCE'
+REF_PARAGRAPH = 'PARAGRAPH'
+REF_DIALOGUE = 'DIALOGUE'
+
+REF_CHOICES = (
+    (REF_WORD, 'WORD'),
+    (REF_PHRASE, 'PHRASE'),
+    (REF_SENTENCE, 'SENTENCE'),
+    (REF_PARAGRAPH, 'PARAGRAPH'),
+    (REF_DIALOGUE, 'DIALOGUE'),
+)
+
+# notify_type
+NOTIFY_TYPE_ADD_NEW_FOLDER = 'add-new-folder'
+NOTIFY_TYPE_ADD_NEW_FEATURE = 'add-new-feature'
+NOTIFY_TYPE_PROMOTIONAL_CAMPAIGN = 'promotional-campaign'
+NOTIFY_TYPE_PRE_ORDER = 'pre-order'
+NOTIFY_TYPE_EVENT = 'event'
+NOTIFY_TYPE_UPDATE_CONTENT = 'update-content'
+NOTIFY_TYPE_UPDATE_VERSION = 'update-version'
+NOTIFY_TYPE_LOGIN_REMINDER = 'login-reminder'
+NOTIFY_TYPE_ACHIEVING_GOAL_INFO = 'achieving-goal-information'
+NOTIFY_TYPE_RATING_APP = 'rating-app'
+
+USER_PREMIUM = 'premium'
+USER_FREE = 'free'
+USER_ALL = 'all'

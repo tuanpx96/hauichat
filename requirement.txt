@@ -10,7 +10,7 @@ amqp==2.3.2
 billiard==3.5.0.4
 boto3==1.9.50
 botocore==1.12.50
-celery==4.2.1
+celery==5.2.2
 certifi==2018.10.15
 chardet==3.0.4
 Django==2.1.3
